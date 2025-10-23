@@ -1,3 +1,11 @@
+export interface Props {
+  name: string;
+  colors: string[];
+  title?: boolean;
+  square?: boolean;
+  size?: string | number;
+}
+
 export const hashCode = (name: string): number => {
   let hash = 0
   for (let i = 0; i < name.length; i++) {

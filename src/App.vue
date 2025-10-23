@@ -5,38 +5,40 @@ import AvatarMarble from '@/lib/components/AvatarMarble.vue'
 import AvatarPixel from '@/lib/components/AvatarPixel.vue'
 import AvatarRing from '@/lib/components/AvatarRing.vue'
 import AvatarSunset from '@/lib/components/AvatarSunset.vue'
+const colors = ['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90']
+const name = 'dev@ajabad.com'
 </script>
 
 <template>
   <div style="display: flex; gap: 1rem">
     <avatar-bauhaus
-      name="dev@ajabad.com"
-      :colors="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']"
+      :name="name"
+      :colors="colors"
       size="50"
     />
     <avatar-beam
-      name="dev@ajabad.com"
-      :colors="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']"
+      :name="name"
+      :colors="colors"
       size="50"
     />
     <avatar-marble
-      name="dev@ajabad.com"
-      :colors="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']"
+      :name="name"
+      :colors="colors"
       size="50"
     />
     <avatar-pixel
-      name="dev@ajabad.com"
-      :colors="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']"
+      :name="name"
+      :colors="colors"
       size="50"
     />
     <avatar-ring
-      name="dev@ajabad.com"
-      :colors="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']"
+      :name="name"
+      :colors="colors"
       size="50"
     />
     <avatar-sunset
-      name="dev@ajabad.com"
-      :colors="['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']"
+      :name="name"
+      :colors="colors"
       size="50"
     />
   </div>

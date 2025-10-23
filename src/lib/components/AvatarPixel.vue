@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { hashCode, getRandomColor } from '../utilities'
-
-interface Props {
-  name: string
-  colors: string[]
-  title?: boolean
-  square?: boolean
-  size?: string | number
-}
+import type { Props } from '../utilities'
 
 const props = defineProps<Props>()
 
