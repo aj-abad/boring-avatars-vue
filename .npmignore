@@ -1,0 +1,43 @@
+# Source files
+src/
+public/
+
+# Config files
+vite.config.ts
+tsconfig.json
+tsconfig.app.json
+tsconfig.node.json
+eslint.config.js
+eslint.config.ts
+env.d.ts
+
+# Development files
+*.log
+*.tgz
+.DS_Store
+node_modules/
+.vscode/
+.idea/
+
+# Git files
+.git/
+.gitignore
+.github/
+
+# Test files
+*.test.ts
+*.spec.ts
+__tests__/
+coverage/
+
+# Development
+index.html
+
+# Demo/Public files in dist
+dist/index.html
+dist/favicon.ico
+dist/*.png
+dist/logo*.png
+dist/manifest.json
+dist/robots.txt
+dist/boring-avatars-preview.png

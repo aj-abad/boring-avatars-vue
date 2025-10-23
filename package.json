@@ -1,7 +1,46 @@
 {
   "name": "boring-avatars-vue",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Boring avatars is a tiny JavaScript Vue library that generates custom, SVG-based avatars from any username and color palette.",
+  "author": "AJ Abad",
+  "license": "MIT",
+  "homepage": "https://github.com/aj-abad/boring-avatars-vue#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aj-abad/boring-avatars-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aj-abad/boring-avatars-vue/issues"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "avatar",
+    "avatars",
+    "boring-avatars",
+    "svg",
+    "component",
+    "typescript"
+  ],
+  "main": "./dist/boring-avatars-vue.umd.js",
+  "module": "./dist/boring-avatars-vue.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/boring-avatars-vue.es.js",
+      "require": "./dist/boring-avatars-vue.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts",
+    "dist/components/*.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "private": false,
   "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
@@ -11,9 +50,10 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build",
+    "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix --cache",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "vue": "^3.5.22"
@@ -32,6 +72,7 @@
     "prettier": "3.6.2",
     "typescript": "~5.9.0",
     "vite": "npm:rolldown-vite@latest",
+    "vite-plugin-dts": "^4.5.4",
     "vite-plugin-vue-devtools": "^8.0.3",
     "vue-tsc": "^3.1.1"
   }

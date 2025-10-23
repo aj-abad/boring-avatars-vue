@@ -1,76 +1,115 @@
-# Boring avatars
+# Boring Avatars Vue
 
-Boring avatars is a tiny JavaScript React library that generates custom, SVG-based avatars from any username and color palette.
-<a href="https://www.npmjs.com/package/boring-avatars">
+Boring avatars is a tiny JavaScript Vue 3 library that generates custom, SVG-based avatars from any username and color palette.
 
-![hi](https://badgen.net/npm/v/boring-avatars)
+<a href="https://www.npmjs.com/package/boring-avatars-vue">
+
+![npm version](https://badgen.net/npm/v/boring-avatars-vue)
 
 </a>
 
 ## Install
 
-```
-npm install boring-avatars
+```bash
+npm install boring-avatars-vue
 ```
 
 ## Usage
 
-```jsx
-import Avatar from 'boring-avatars';
+```vue
+<script setup>
+import { AvatarBeam } from 'boring-avatars-vue'
+</script>
 
-<Avatar name="Maria Mitchell" />;
+<template>
+  <AvatarBeam name="Maria Mitchell" />
+</template>
+```
+
+### Available Components
+
+```vue
+<script setup>
+import { 
+  AvatarBeam,
+  AvatarBauhaus,
+  AvatarMarble,
+  AvatarPixel,
+  AvatarRing,
+  AvatarSunset
+} from 'boring-avatars-vue'
+</script>
 ```
 
 ### Props
 
-| Prop    | Type                                                         | Default                                                   |
-|---------|--------------------------------------------------------------|-----------------------------------------------------------|
-| size    | number or string                                             | `40px`                                                    |
-| square  | boolean                                                      | `false`                                                   |
-| title   | boolean                                                      | `false`                                                   |
-| name    | string                                                       | `Clara Barton`                                            |
-| variant | oneOf: `marble`, `beam`, `pixel`,`sunset`, `ring`, `bauhaus` | `marble`                                                  |
-| colors  | array                                                        | `['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90']` | 
+| Prop    | Type             | Default                                                   |
+|---------|------------------|-----------------------------------------------------------|
+| size    | number or string | `40`                                                      |
+| square  | boolean          | `false`                                                   |
+| title   | boolean          | `false`                                                   |
+| name    | string           | `Clara Barton`                                            |
+| colors  | string[]         | `['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90']` | 
 
 
 #### Name
 The `name` prop is used to generate the avatar. It can be the username, email or any random string.
 
-```jsx
-<Avatar name="Maria Mitchell"/>
+```vue
+<AvatarBeam name="Maria Mitchell" />
 ```
 
-#### Variant
-The `variant` prop is used to change the theme of the avatar. The available variants are: `marble`, `beam`, `pixel`, `sunset`, `ring` and `bauhaus`.
+#### Variants
+Use different components for different avatar styles:
 
-```jsx
-<Avatar name="Alice Paul" variant="beam"/>
+```vue
+<AvatarBeam name="Alice Paul" />
+<AvatarBauhaus name="Alice Paul" />
+<AvatarMarble name="Alice Paul" />
+<AvatarPixel name="Alice Paul" />
+<AvatarRing name="Alice Paul" />
+<AvatarSunset name="Alice Paul" />
 ```
 
 #### Size
 The `size` prop is used to change the size of the avatar.
 
-```jsx
-<Avatar name="Ada Lovelace" size={88}/>
+```vue
+<AvatarBeam name="Ada Lovelace" :size="88" />
 ```
 
 #### Colors
 The `colors` prop is used to change the color palette of the avatar.
 
-```jsx
-<Avatar name="Grace Hopper" colors={["#fb6900", "#f63700", "#004853", "#007e80", "#00b9bd"]}/>
+```vue
+<AvatarBeam 
+  name="Grace Hopper" 
+  :colors="['#fb6900', '#f63700', '#004853', '#007e80', '#00b9bd']" 
+/>
 ```
 
 #### Square
 The `square` prop is used to make the avatar square.
 
-```jsx
-<Avatar name="Helen Keller" square/>
+```vue
+<AvatarBeam name="Helen Keller" square />
 ```
 
-## API service
+#### Title
+The `title` prop adds a title element to the SVG for accessibility.
 
-> [!IMPORTANT]  
-> Please note that the old service was paused in July 31st 2024. We recommend transitioning to our new API service to ensure uninterrupted access and support.
+```vue
+<AvatarBeam name="Katherine Johnson" title />
+```
 
-Get access to the Boring avatars API service [here →](https://boringdesigners.gumroad.com/l/boring-avatars-service).
+## TypeScript Support
+
+This library is written in TypeScript and includes type definitions.
+
+## Credits
+
+This is a Vue 3 port of the original [boring-avatars](https://github.com/boringdesigners/boring-avatars) React library by [Boring Designers](https://boringavatars.com).
+
+## License
+
+MIT
